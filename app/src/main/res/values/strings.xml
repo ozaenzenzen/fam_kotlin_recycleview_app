@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FAMRecycleViewApp</string>
+    <string name="judul">Test Judul</string>
+    <string name="description">Deskripsi</string>
 </resources>

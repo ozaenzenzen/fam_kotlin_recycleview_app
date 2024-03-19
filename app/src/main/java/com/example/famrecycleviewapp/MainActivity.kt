@@ -1,5 +1,6 @@
 package com.example.famrecycleviewapp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -62,14 +63,18 @@ class MainActivity : AppCompatActivity() {
         return dataArrayList
     }
 
-    private fun showRecyclerList(){
+    private fun showRecyclerList() {
         rvHeroes.layoutManager = LinearLayoutManager(this)
         val listDataAdapter = ListDataAdapter(list)
         rvHeroes.adapter = listDataAdapter
 
         listDataAdapter.setOnItemClickCallback(object: ListDataAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Phone) {
-                showSelectedHero(data)
+                print("Kamu memilih ${data.title}")
+                val moveWithObjectIntent = Intent(this@MainActivity, ActivityItemDetail::class.java)
+                moveWithObjectIntent.putExtra(ActivityItemDetail.EXTRA_PERSON, data)
+                startActivity(moveWithObjectIntent)
+//                showSelectedHero(data)
             }
         })
     }

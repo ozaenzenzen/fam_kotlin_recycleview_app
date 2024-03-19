@@ -1,5 +1,6 @@
 package com.example.famrecycleviewapp
 
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
@@ -35,16 +36,9 @@ class ListDataAdapter(private val listHero: ArrayList<Phone>) : RecyclerView.Ada
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val (_, title, description, _,_,_,_,_,_,_, images) = listHero[position]
-//        holder.imgPhoto.setImageURI(Uri.parse(images[0]))
         Picasso.get()
             .load(images[0])
             .into(holder.imgPhoto);
-
-//        val imageUrl = images[0]
-//        val ins = URL(imageUrl).openStream()
-//        val bmp = BitmapFactory.decodeStream(ins)
-//
-//        holder.imgPhoto.setImageBitmap(bmp)
         holder.tvName.text = title
         holder.tvDescription.text = description
 

@@ -23,20 +23,32 @@ data class Phone (
     val thumbnail: String,
     val images: List<String>
 ) : Parcelable {
-    constructor(parcel: Parcel) : this(
-        parcel.readValue(Long::class.java.classLoader) as Long,
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readValue(Long::class.java.classLoader) as Long,
-        parcel.readValue(Double::class.java.classLoader) as Double,
-        parcel.readValue(Double::class.java.classLoader) as Double,
-        parcel.readValue(Long::class.java.classLoader) as Long,
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.readString().toString(),
-        parcel.createStringArrayList() ?: emptyList()
-    ) {
-    }
+//    constructor(parcel: Parcel) : this(
+//        parcel.readValue(Long::class.java.classLoader) as Long,
+//        parcel.readString().toString(),
+//        parcel.readString().toString(),
+//        parcel.readValue(Long::class.java.classLoader) as Long,
+//        parcel.readValue(Double::class.java.classLoader) as Double,
+//        parcel.readValue(Double::class.java.classLoader) as Double,
+//        parcel.readValue(Long::class.java.classLoader) as Long,
+//        parcel.readString().toString(),
+//        parcel.readString().toString(),
+//        parcel.readString().toString(),
+//        parcel.createStringArrayList() ?: emptyList()
+//    )
+constructor(parcel: Parcel) : this(
+    parcel.readLong(),
+    parcel.readString() ?: "",
+    parcel.readString() ?: "",
+    parcel.readLong(),
+    parcel.readDouble(),
+    parcel.readDouble(),
+    parcel.readLong(),
+    parcel.readString() ?: "",
+    parcel.readString() ?: "",
+    parcel.readString() ?: "",
+    parcel.createStringArrayList() ?: ArrayList()
+)
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
         parcel.writeLong(id)

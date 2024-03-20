@@ -36,9 +36,7 @@ class ListDataAdapter(private val listHero: ArrayList<Phone>) : RecyclerView.Ada
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val (_, title, description, _,_,_,_,_,_,_, images) = listHero[position]
-        Picasso.get()
-            .load(images[0])
-            .into(holder.imgPhoto);
+        Picasso.get().load(images[0]).into(holder.imgPhoto);
         holder.tvName.text = title
         holder.tvDescription.text = description
 

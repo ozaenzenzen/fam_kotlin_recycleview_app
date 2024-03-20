@@ -70,7 +70,6 @@ class MainActivity : AppCompatActivity() {
 
         listDataAdapter.setOnItemClickCallback(object: ListDataAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Phone) {
-                print("Kamu memilih ${data.title}")
                 val moveWithObjectIntent = Intent(this@MainActivity, ActivityItemDetail::class.java)
                 moveWithObjectIntent.putExtra(ActivityItemDetail.EXTRA_PERSON, data)
                 startActivity(moveWithObjectIntent)

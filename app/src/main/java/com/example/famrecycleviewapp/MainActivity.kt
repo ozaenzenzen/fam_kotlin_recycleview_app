@@ -33,17 +33,19 @@ class MainActivity : AppCompatActivity() {
         return super.onCreateOptionsMenu(menu)
     }
 
-//    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        when (item.itemId) {
-//            R.id.action_list -> {
-//                rvHeroes.layoutManager = LinearLayoutManager(this)
-//            }
-//            R.id.action_grid -> {
-//                rvHeroes.layoutManager = GridLayoutManager(this, 2)
-//            }
-//        }
-//        return super.onOptionsItemSelected(item)
-//    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_settings -> {
+                val imageUrl = R.drawable.profile_picture_dicoding
+
+                val profile = Profile(imageUrl,"Fauzan Akmal Mahdi","recovery252@gmail.com")
+                val moveToProfile = Intent(this@MainActivity, ProfileActivity::class.java)
+                moveToProfile.putExtra(ProfileActivity.EXTRA_PROFILE, profile)
+                startActivity(moveToProfile)
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 
 
     private fun getListData(): ArrayList<Phone>{

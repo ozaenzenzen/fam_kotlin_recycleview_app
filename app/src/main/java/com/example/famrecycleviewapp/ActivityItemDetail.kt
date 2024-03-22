@@ -16,7 +16,7 @@ class ActivityItemDetail : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_detail)
 
-        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val tvObject: TextView = findViewById(R.id.tv_object_received)
         val imgPhoto: ImageView = findViewById(R.id.img_item_detail_photo)
@@ -29,7 +29,10 @@ class ActivityItemDetail : AppCompatActivity() {
         }
 
         if (phone != null) {
-            val text = "Name ${phone?.title.toString()},\nEmail: ${phone?.description},\nPrice: ${phone?.price},\nRating: ${phone?.rating}"
+            val text = "Name ${phone?.title.toString()}," +
+                    "\nEmail: ${phone?.description}," +
+                    "\nPrice: ${phone?.price}," +
+                    "\nRating: ${phone?.rating}"
             tvObject.text = text
             Picasso.get().load(phone.images[0]).into(imgPhoto);
         }

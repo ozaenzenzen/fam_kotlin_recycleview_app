@@ -17,7 +17,7 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
 
-        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val aboutPhoto: ImageView = findViewById(R.id.about_photo)
         val aboutName: TextView = findViewById(R.id.about_name)

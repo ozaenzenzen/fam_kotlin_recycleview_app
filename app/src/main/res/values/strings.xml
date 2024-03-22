@@ -4,6 +4,6 @@
     <string name="description">Deskripsi</string>
     <string name="object_received">Object Diterima</string>
 
-    <string name="about_name">About Name</string>
-    <string name="about_email">About Email</string>
+    <string name="name_about_page">About Name</string>
+    <string name="email_about_page">About Email</string>
 </resources>

@@ -19,9 +19,9 @@ class ProfileActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val aboutPhoto: ImageView = findViewById(R.id.about_photo)
-        val aboutName: TextView = findViewById(R.id.about_name)
-        val aboutEmail: TextView = findViewById(R.id.about_email)
+        val aboutPhoto: ImageView = findViewById(R.id.photo_about_page)
+        val aboutName: TextView = findViewById(R.id.name_about_page)
+        val aboutEmail: TextView = findViewById(R.id.email_about_page)
 
         val profileData = if (Build.VERSION.SDK_INT >= 33) {
             intent.getParcelableExtra<Profile>(ProfileActivity.EXTRA_PROFILE, Profile::class.java)

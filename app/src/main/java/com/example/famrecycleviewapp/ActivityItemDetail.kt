@@ -16,6 +16,8 @@ class ActivityItemDetail : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_item_detail)
 
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
+
         val tvObject: TextView = findViewById(R.id.tv_object_received)
         val imgPhoto: ImageView = findViewById(R.id.img_item_detail_photo)
 

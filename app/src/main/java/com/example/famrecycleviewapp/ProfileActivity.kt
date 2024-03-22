@@ -1,12 +1,12 @@
 package com.example.famrecycleviewapp
 
+import android.app.ActionBar
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.squareup.picasso.Picasso
-import java.io.File
 
 class ProfileActivity : AppCompatActivity() {
 
@@ -16,6 +16,8 @@ class ProfileActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
+
+        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true)
 
         val aboutPhoto: ImageView = findViewById(R.id.about_photo)
         val aboutName: TextView = findViewById(R.id.about_name)
@@ -35,4 +37,5 @@ class ProfileActivity : AppCompatActivity() {
             Picasso.get().load(profileData.picture).into(aboutPhoto)
         }
     }
+
 }
